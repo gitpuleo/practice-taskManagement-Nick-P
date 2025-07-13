@@ -1,0 +1,1 @@
+//component to display the specific details of a task
