@@ -1,6 +1,6 @@
-//component for displaying a list of tasks
+import { Link } from "react-router-dom";
 
-let taskDataset = [
+export const taskDataset = [
     {
         id: 0,
         title: "Required Assingments",
@@ -22,3 +22,24 @@ let taskDataset = [
         description: "Get down code, review, ask questions and revise"
     }
 ]
+
+function TaskList() {
+
+    return (
+        <div>
+            <h1>Task List</h1>
+            {taskDataset.map(task => (
+                <div key={task.id}>
+            <Link to={`/task/${task.id}`}>{task.title}</Link>
+            </div>
+            ))}
+        </div>
+    );
+}
+
+export default TaskList;
+
+
+
+
+//inside app function, insert the /status/:id path in the Route element; this is the dynamic route where id is the placeholder for the parameter
